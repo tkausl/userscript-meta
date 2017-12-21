@@ -27,6 +27,13 @@ var str = [
   '// ==/UserScript==\n'
 ].join('')
 
+var strPretty = [
+  '// ==UserScript==\n',
+  '// @name    test\n',
+  '// @version 0.1\n',
+  '// ==/UserScript==\n'
+].join('')
+
 var strMulti = [
   '// ==UserScript==\n',
   '// @name test\n',
@@ -120,5 +127,9 @@ describe('stringify', function () {
 
   it('should handle array', function () {
     assert.equal(stringify(jsonMulti), strMulti)
+  })
+
+  it('should prettify', function() {
+    assert.equal(stringify(json, true), strPretty)
   })
 })

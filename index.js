@@ -37,26 +37,32 @@ function parse(meta) {
     }, {})
 }
 
-function getLine(key, value) {
+function getLine(key, value, len) {
   // For field which has multiple values, like `match`
   if (Array.isArray(value)) {
     return value.map(function (value) {
-      return getLine(key, value)
+      return getLine(key, value, len)
     }).join('')
   }
+
+  if (len)
+    key = (key + ' '.repeat(len)).slice(0, len)
 
   return '// @' + key + ' ' + value + '\n'
 }
 
 // Stringify metadata from an object
-function stringify(obj) {
+function stringify(obj, pretty) {
   if (!isObject(obj)) {
     throw new Error('`Stringify`\'s first argument should be an object')
   }
+  var len = 0
+  if (pretty)
+    len = Object.keys(obj).map(k => k.length).reduce((p, c) => p > c ? p : c)
 
   var meta = Object.keys(obj)
     .map(function (key) {
-      return getLine(key, obj[key])
+      return getLine(key, obj[key], len)
     }).join('')
 
   return '// ==UserScript==\n' + meta + '// ==/UserScript==\n'

@@ -1,6 +1,6 @@
 {
-  "name": "userscript-meta",
-  "version": "1.0.1",
+  "name": "@tkausl/userscript-meta",
+  "version": "1.0.2",
   "description": "Parse and stringify Userscript metadata.",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pd4d10/userscript-meta.git"
+    "url": "git+https://github.com/tkausl/userscript-meta.git"
   },
   "keywords": [
     "userscript",
@@ -22,9 +22,9 @@
   "author": "pd4d10 <pd4d10@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pd4d10/userscript-meta/issues"
+    "url": "https://github.com/tkausl/userscript-meta/issues"
   },
-  "homepage": "https://github.com/pd4d10/userscript-meta#readme",
+  "homepage": "https://github.com/tkausl/userscript-meta#readme",
   "devDependencies": {
     "istanbul": "^0.4.5",
     "mocha": "^3.1.2"
